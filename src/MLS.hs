@@ -17,7 +17,7 @@ xor False a = a
 
 tick :: [Bool] -> State [Bool] Bool
 tick poly = do
-  let coefficients = tail poly -- член полинома с нулевой степенью не отображается в регистре
+  let coefficients = tail poly -- polynomial member with power of 0 is not a part of register
   regVals <- get
   let result = foldl xor False [y | (x, y) <- zip coefficients regVals, x]
   put $ result : init regVals
@@ -29,5 +29,5 @@ mls polynome register =
     then evalState (replicateM n nextState) register
     else error "Wrong length of init register"
   where
-    n = (length polynome - 1) ^ 2 - 1 -- степень полинома в квадрате - 1
+    n = (length polynome - 1) ^ 2 - 1
     nextState = tick polynome

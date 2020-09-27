@@ -28,6 +28,7 @@ library
       Convolution
       Lib
       MLS
+      Signal
   other-modules:
       Paths_sar_signal
   hs-source-dirs:

@@ -1,4 +1,4 @@
-module Convolution () where
+module Convolution (cacf, iacf) where
 
 barker11 :: [Int]
 barker11 = [1, 1, 1, -1, -1, -1, 1, -1, -1, 1, -1]
@@ -18,10 +18,10 @@ shift (x : xs) = xs ++ [x]
 cacf :: Num a => [a] -> [a] -> [a]
 cacf a b = map (convolution a) $ take n $ iterate shift b
   where
-    n = (length a)
+    n = length a
 
 iacf :: Num a => [a] -> [a] -> [a]
 iacf a b = cacf a' b'
   where
-    a' = a ++ (replicate (length b) 0)
-    b' = (replicate (length a) 0) ++ b
+    a' = a ++ replicate (length b) 0
+    b' = replicate (length a) 0 ++ b

@@ -1,8 +1,10 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.34.2.
+-- This file has been generated from package.yaml by hpack version 0.33.0.
 --
 -- see: https://github.com/sol/hpack
+--
+-- hash: 2e9c714363b781ecb673aa735d42b6dfff60aa29dea0f0419a706978741e88fa
 
 name:           sar-signal
 version:        0.1.0.0
@@ -26,7 +28,6 @@ source-repository head
 library
   exposed-modules:
       Convolution
-      Lib
       MLS
   other-modules:
       Paths_sar_signal

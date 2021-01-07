@@ -1,4 +1,5 @@
 import Convolution
+import MLS
 import Test.Hspec
 import Test.QuickCheck
 
@@ -6,9 +7,10 @@ main :: IO ()
 main = hspec $ do
   iacfTest
   cacfTest
+  mlsTest
 
 iacfTest :: SpecWith ()
-iacfTest = describe "Convolution" $ do
+iacfTest = describe "Convolution iacf" $ do
   it "returns the impulse autocorrelation function of *barker2*" $ do
     iacf barker2 barker2 `shouldBe` [-1, 2, -1]
   it "returns the impulse autocorrelation function of *barker2'*" $ do
@@ -29,7 +31,7 @@ iacfTest = describe "Convolution" $ do
     iacf barker13 barker13 `shouldBe` [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 13, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
 
 cacfTest :: SpecWith ()
-cacfTest = describe "Convolution" $ do
+cacfTest = describe "Convolution cacf" $ do
   it "returns the circular autocorrelation function of *barker2*" $ do
     cacf barker2 barker2 `shouldBe` [2, -2]
   it "returns the circular autocorrelation function of *barker2'*" $ do
@@ -48,6 +50,17 @@ cacfTest = describe "Convolution" $ do
     cacf barker11 barker11 `shouldBe` [11, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
   it "returns the circular autocorrelation function of *barker13*" $ do
     cacf barker13 barker13 `shouldBe` [13, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+mlsTest :: SpecWith ()
+mlsTest = describe "Generation MLS" $ do
+  it "returns Maximal Length Sequence N=3" $ do
+    mls [True, True, True] [True, False] `shouldBe` [False, True, True]
+  it "returns Maximal Length Sequence N=7" $ do
+    mls [True, False, True, True] [True, False, False] `shouldBe` [False, False, True, False, True, True, True]
+  it "returns Maximal Length Sequence N=15" $ do
+    mls [True, False, False, True, True] [True, False, False, False] `shouldBe` [False, False, False, True, False, False, True, True, False, True, False, True, True, True, True]
+  it "returns Maximal Length Sequence N=31" $ do
+    mls [True, False, False, True, False, True] [True, False, False, False, False] `shouldBe` [False, False, False, False, True, False, False, True, False, True, True, False, False, True, True, True, True, True, False, False, False, True, True, False, True, True, True, False, True, False, True]
 
 barker2 :: [Int]
 barker2 = [1, -1]

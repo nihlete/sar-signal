@@ -6,10 +6,6 @@ import Control.Monad.State.Lazy
     evalState,
     replicateM,
   )
-import Data.Complex (Complex (..))
-
-j :: RealFloat a => Complex a
-j = 0 :+ 1
 
 xor :: Bool -> Bool -> Bool
 xor True a = not a

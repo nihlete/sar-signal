@@ -35,6 +35,7 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
+    - linear
     - sar-signal
 
 tests:

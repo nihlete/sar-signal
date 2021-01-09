@@ -3,11 +3,14 @@ import MLS
 import Test.Hspec
 import Test.QuickCheck
 
+import EchoTest
+
 main :: IO ()
 main = hspec $ do
   iacfTest
   cacfTest
   mlsTest
+  echoTest
 
 iacfTest :: SpecWith ()
 iacfTest = describe "Convolution iacf" $ do

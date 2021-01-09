@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: dbf2354ee85c540750247862bedb56f0e0c4dc97ef277abd79ae45823ca7f1eb
+-- hash: da7917813d3254f285275319d20b618daff2806d65e4d1c0e5255c09dc833f32
 
 name:           sar-signal
 version:        0.1.0.0
@@ -28,6 +28,7 @@ source-repository head
 library
   exposed-modules:
       Convolution
+      Echo
       MLS
   other-modules:
       Paths_sar_signal
@@ -35,6 +36,7 @@ library
       src
   build-depends:
       base >=4.7 && <5
+    , linear
     , mtl
   default-language: Haskell2010
 
@@ -56,6 +58,7 @@ test-suite sar-signal-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      EchoTest
       Paths_sar_signal
   hs-source-dirs:
       test
@@ -64,6 +67,9 @@ test-suite sar-signal-test
       QuickCheck
     , base >=4.7 && <5
     , hspec
+    , linear
     , mtl
     , sar-signal
+    , vector
+    , vector-fft
   default-language: Haskell2010

@@ -3,7 +3,14 @@
 # For more information, please see the documentation at:
 #   https://docs.haskellstack.org/en/stable/lock_files
 
-packages: []
+packages:
+- completed:
+    hackage: vector-fft-0.1.0.2@sha256:a40650c3cf6b92f8cc6f7007089d52eaeaa8a150be653ff50fcd911a47d5485b,1576
+    pantry-tree:
+      size: 316
+      sha256: 701b0e8773679671a3704ffbbd4e63f4ecd1566ccfa0d64861deed4dda48c415
+  original:
+    hackage: vector-fft-0.1.0.2@sha256:a40650c3cf6b92f8cc6f7007089d52eaeaa8a150be653ff50fcd911a47d5485b,1576
 snapshots:
 - completed:
     size: 532380

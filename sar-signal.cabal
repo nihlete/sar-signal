@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: da7917813d3254f285275319d20b618daff2806d65e4d1c0e5255c09dc833f32
+-- hash: cd651d4ce4ad91ad8dd9ac79f594650017f05b25c6949eaf04c126ceb2793a69
 
 name:           sar-signal
 version:        0.1.0.0
@@ -27,7 +27,7 @@ source-repository head
 
 library
   exposed-modules:
-      Convolution
+      Correlation
       Echo
       MLS
   other-modules:

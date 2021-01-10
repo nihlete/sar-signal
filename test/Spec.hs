@@ -1,9 +1,8 @@
-import Convolution
+import Correlation
+import EchoTest
 import MLS
 import Test.Hspec
 import Test.QuickCheck
-
-import EchoTest
 
 main :: IO ()
 main = hspec $ do

@@ -1,6 +1,6 @@
 module Main where
 
-import Convolution (cacf)
+import Correlation (cacf)
 import Data.Complex (Complex (..))
 import Linear.Metric
 import Linear.V3

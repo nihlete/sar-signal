@@ -2,7 +2,7 @@ module Main where
 
 import Correlation (cacf)
 import Data.Complex (Complex (..))
-import Graphics.Rendering.Chart.Backend.Cairo
+import Graphics.Rendering.Chart.Backend.Diagrams
 import Graphics.Rendering.Chart.Easy
 import Linear.Metric
 import Linear.V3

@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 11ca5225381d858af3637813435f5ce38cc99fda598a3105fa3bdb69c641e4d5
+-- hash: 303a4799db9c733570b285c6192c87e3b5bcc07367f583aae173d1661bdbae22
 
 name:           sar-signal
 version:        0.1.0.0
@@ -36,7 +36,7 @@ library
       src
   build-depends:
       Chart
-    , Chart-cairo
+    , Chart-diagrams
     , base >=4.7 && <5
     , linear
     , mtl
@@ -51,7 +51,7 @@ executable sar-signal-exe
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       Chart
-    , Chart-cairo
+    , Chart-diagrams
     , base >=4.7 && <5
     , linear
     , mtl
@@ -69,7 +69,7 @@ test-suite sar-signal-test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       Chart
-    , Chart-cairo
+    , Chart-diagrams
     , QuickCheck
     , base >=4.7 && <5
     , hspec
